@@ -1,11 +1,13 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Providers from "./Providers";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "IMdB Clone",
+  title: "IMDb Clone",
   description: "Movie database clone",
 };
 
@@ -14,8 +16,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
 
       <body className={inter.className}>
-      <Header />
-      {children}</body>
+          <Providers>
+            <Header />
+            {children}
+          </Providers>
+      </body>
     </html>
   );
 }
